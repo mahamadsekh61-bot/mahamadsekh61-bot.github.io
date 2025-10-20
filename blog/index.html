@@ -175,11 +175,21 @@
     <!-- Tactic Filters -->
     <section class="container">
         <div class="tactic-filter">
-            <button class="filter-btn active" data-tactic="all">All Articles</button>
+            <button class="filter-btn active" data-tactic="all">All Articles (23)</button>
             <button class="filter-btn" data-tactic="initial-access">Initial Access</button>
             <button class="filter-btn" data-tactic="execution">Execution</button>
             <button class="filter-btn" data-tactic="persistence">Persistence</button>
+            <button class="filter-btn" data-tactic="privilege-escalation">Privilege Escalation</button>
             <button class="filter-btn" data-tactic="defense-evasion">Defense Evasion</button>
+            <button class="filter-btn" data-tactic="credential-access">Credential Access</button>
+            <button class="filter-btn" data-tactic="discovery">Discovery</button>
+            <button class="filter-btn" data-tactic="lateral-movement">Lateral Movement</button>
+            <button class="filter-btn" data-tactic="collection">Collection</button>
+            <button class="filter-btn" data-tactic="command-and-control">Command & Control</button>
+            <button class="filter-btn" data-tactic="exfiltration">Exfiltration</button>
+            <button class="filter-btn" data-tactic="impact">Impact</button>
+            <button class="filter-btn" data-tactic="resource-development">Resource Development</button>
+            <button class="filter-btn" data-tactic="reconnaissance">Reconnaissance</button>
         </div>
     </section>
     
@@ -228,21 +238,34 @@
             });
         }
         
-        // Blog articles data
+        // Blog articles data - NOW WITH 23 ARTICLES!
         const articles = [
-            { title: 'Phishing Attacks', tactic: 'initial-access', file: 'initial-access-phishing.md', wordCount: 626, description: 'Deep dive into phishing techniques, detection methods, and prevention strategies.' },
-            { title: 'Exploit Public-Facing Application', tactic: 'initial-access', file: 'initial-access-exploit-public-facing-application.md', wordCount: 654, description: 'Analysis of exploiting vulnerabilities in internet-facing applications.' },
-            { title: 'Valid Accounts (Initial Access)', tactic: 'initial-access', file: 'initial-access-valid-accounts.md', wordCount: 640, description: 'How attackers leverage legitimate credentials for initial access.' },
-            { title: 'Command and Scripting Interpreter', tactic: 'execution', file: 'execution-command-and-scripting-interpreter.md', wordCount: 657, description: 'Malicious use of command-line interfaces and scripting engines.' },
-            { title: 'Scheduled Task/Job', tactic: 'execution', file: 'execution-scheduled-task-or-job.md', wordCount: 657, description: 'Abusing task schedulers for malicious code execution.' },
-            { title: 'User Execution', tactic: 'execution', file: 'execution-user-execution.md', wordCount: 629, description: 'Social engineering tactics that trick users into running malware.' },
-            { title: 'Create or Modify System Process', tactic: 'persistence', file: 'persistence-create-or-modify-system-process.md', wordCount: 671, description: 'Techniques for maintaining access through system process manipulation.' },
-            { title: 'Boot or Logon Autostart Execution', tactic: 'persistence', file: 'persistence-boot-or-logon-autostart-execution.md', wordCount: 671, description: 'Persistence mechanisms that survive system restarts.' },
-            { title: 'Create Account', tactic: 'persistence', file: 'persistence-create-account.md', wordCount: 629, description: 'Establishing backdoor accounts for long-term access.' },
-            { title: 'Valid Accounts (Defense Evasion)', tactic: 'defense-evasion', file: 'defense-evasion-valid-accounts.md', wordCount: 640, description: 'Using legitimate credentials to evade detection systems.' },
-            { title: 'Deobfuscate/Decode Files or Information', tactic: 'defense-evasion', file: 'defense-evasion-deobfuscate-decode-files-or-information.md', wordCount: 682, description: 'Runtime decryption and deobfuscation to hide malicious intent.' },
-            { title: 'Impair Defenses', tactic: 'defense-evasion', file: 'defense-evasion-impair-defenses.md', wordCount: 640, description: 'Techniques to disable or bypass security controls.' },
-            { title: 'Obfuscated Files or Information', tactic: 'defense-evasion', file: 'defense-evasion-obfuscated-files-or-information.md', wordCount: 668, description: 'Obfuscation methods to hide malicious code from analysis.' }
+            // Original 13 articles
+            { title: 'Phishing Attacks', tactic: 'initial-access', file: 'initial-access-phishing.html', wordCount: 626, description: 'Deep dive into phishing techniques, detection methods, and prevention strategies.' },
+            { title: 'Exploit Public-Facing Application', tactic: 'initial-access', file: 'initial-access-exploit-public-facing-application.html', wordCount: 654, description: 'Analysis of exploiting vulnerabilities in internet-facing applications.' },
+            { title: 'Valid Accounts (Initial Access)', tactic: 'initial-access', file: 'initial-access-valid-accounts.html', wordCount: 640, description: 'How attackers leverage legitimate credentials for initial access.' },
+            { title: 'Command and Scripting Interpreter', tactic: 'execution', file: 'execution-command-and-scripting-interpreter.html', wordCount: 657, description: 'Malicious use of command-line interfaces and scripting engines.' },
+            { title: 'Scheduled Task/Job', tactic: 'execution', file: 'execution-scheduled-task-or-job.html', wordCount: 657, description: 'Abusing task schedulers for malicious code execution.' },
+            { title: 'User Execution', tactic: 'execution', file: 'execution-user-execution.html', wordCount: 629, description: 'Social engineering tactics that trick users into running malware.' },
+            { title: 'Create or Modify System Process', tactic: 'persistence', file: 'persistence-create-or-modify-system-process.html', wordCount: 671, description: 'Techniques for maintaining access through system process manipulation.' },
+            { title: 'Boot or Logon Autostart Execution', tactic: 'persistence', file: 'persistence-boot-or-logon-autostart-execution.html', wordCount: 671, description: 'Persistence mechanisms that survive system restarts.' },
+            { title: 'Create Account', tactic: 'persistence', file: 'persistence-create-account.html', wordCount: 629, description: 'Establishing backdoor accounts for long-term access.' },
+            { title: 'Valid Accounts (Defense Evasion)', tactic: 'defense-evasion', file: 'defense-evasion-valid-accounts.html', wordCount: 640, description: 'Using legitimate credentials to evade detection systems.' },
+            { title: 'Deobfuscate/Decode Files or Information', tactic: 'defense-evasion', file: 'defense-evasion-deobfuscate-decode-files-or-information.html', wordCount: 682, description: 'Runtime decryption and deobfuscation to hide malicious intent.' },
+            { title: 'Impair Defenses', tactic: 'defense-evasion', file: 'defense-evasion-impair-defenses.html', wordCount: 640, description: 'Techniques to disable or bypass security controls.' },
+            { title: 'Obfuscated Files or Information', tactic: 'defense-evasion', file: 'defense-evasion-obfuscated-files-or-information.html', wordCount: 668, description: 'Obfuscation methods to hide malicious code from analysis.' },
+            
+            // NEW! 10 additional articles for AdSense threshold
+            { title: 'Access Token Manipulation', tactic: 'privilege-escalation', file: 'article14.html', wordCount: 850, description: 'Adversaries modify access tokens to operate under different security contexts and escalate privileges.' },
+            { title: 'OS Credential Dumping', tactic: 'credential-access', file: 'article15.html', wordCount: 830, description: 'Techniques for extracting credentials from LSASS memory, SAM database, and cached domain credentials.' },
+            { title: 'System Information Discovery', tactic: 'discovery', file: 'article16.html', wordCount: 820, description: 'How attackers gather system intelligence to plan subsequent attack stages and lateral movement.' },
+            { title: 'Remote Services', tactic: 'lateral-movement', file: 'article17.html', wordCount: 840, description: 'Using RDP, SSH, SMB, and VNC for lateral movement across compromised networks.' },
+            { title: 'Data from Local System', tactic: 'collection', file: 'article18.html', wordCount: 835, description: 'Techniques for collecting data from file systems, databases, and document repositories.' },
+            { title: 'Application Layer Protocol', tactic: 'command-and-control', file: 'article19.html', wordCount: 845, description: 'C2 communication using HTTP/HTTPS, DNS, and email to blend with legitimate traffic.' },
+            { title: 'Exfiltration Over C2 Channel', tactic: 'exfiltration', file: 'article20.html', wordCount: 825, description: 'Stealing data over command and control channels to evade detection systems.' },
+            { title: 'Data Encrypted for Impact', tactic: 'impact', file: 'article21.html', wordCount: 860, description: 'Ransomware attacks that encrypt data to disrupt operations and extort victims.' },
+            { title: 'Acquire Infrastructure', tactic: 'resource-development', file: 'article22.html', wordCount: 840, description: 'How adversaries acquire domains, servers, and cloud resources to support operations.' },
+            { title: 'Active Scanning', tactic: 'reconnaissance', file: 'article23.html', wordCount: 830, description: 'Port scanning, vulnerability scanning, and service enumeration techniques.' }
         ];
         
         // Render articles

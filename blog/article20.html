@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Understanding Exfiltration Over C2 Channel (T1041) - MITRE ATT&CK Exfiltration technique with detection and mitigation strategies.">
+    <meta name="keywords" content="MITRE ATT&CK, Exfiltration Over C2 Channel, Exfiltration, cybersecurity, threat detection, T1041">
+    <meta name="author" content="Mahamad Sekh">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Exfiltration Over C2 Channel - MITRE ATT&CK Exfiltration">
+    <meta property="og:description" content="Adversaries steal data by exfiltrating it over the same channel used for command and control communications. This technique consolidates operations an...">
+    <meta property="og:url" content="https://mahamadsekh61-bot.github.io/blog/article20.html">
+    
+    <title>Exfiltration Over C2 Channel - MITRE ATT&CK Exfiltration | Cybersecurity Intelligence</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../clinical_v2.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="nav-brand">
+            <a href="../index.html">Mahamad Sekh</a>
+        </div>
+        <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../blog/index.html" class="active">Blog</a></li>
+            <li><a href="../index.html#services">Services</a></li>
+            <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Article Header -->
+    <header class="article-header">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="../index.html">Home</a> &raquo; 
+                <a href="index.html">Blog</a> &raquo; 
+                <span>Exfiltration Over C2 Channel</span>
+            </nav>
+            
+            <h1 class="article-title">Exfiltration Over C2 Channel</h1>
+            
+            <div class="article-meta">
+                <span class="meta-item">
+                    <strong>MITRE ID:</strong> T1041
+                </span>
+                <span class="meta-item">
+                    <strong>Tactic:</strong> <span class="tactic-badge tactic-exfiltration">Exfiltration</span>
+                </span>
+                <span class="meta-item">
+                    <strong>Published:</strong> October 20, 2025
+                </span>
+                <span class="meta-item">
+                    <strong>Author:</strong> Mahamad Sekh
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Article Content -->
+    <main class="article-content">
+        <div class="container">
+            <!-- Technique Overview -->
+            <section class="content-section">
+                <h2>Technique Overview</h2>
+                <p class="lead-text">
+                    Adversaries steal data by exfiltrating it over the same channel used for command and control communications. This technique consolidates operations and makes detection more difficult by reducing the number of distinct communication channels.
+                </p>
+            </section>
+
+            <!-- How It Works -->
+            <section class="content-section">
+                <h2>How Exfiltration Over C2 Channel Works</h2>
+                <p>
+                    This exfiltration technique is commonly observed in sophisticated attack campaigns 
+                    where adversaries seek to steal sensitive information. 
+                    Understanding the mechanics of this technique is crucial for security teams implementing 
+                    effective detection and prevention strategies.
+                </p>
+                
+                <div class="info-box">
+                    <h3>Key Characteristics</h3>
+                    <ul>
+                        <li>Part of the MITRE ATT&CK Exfiltration tactic</li>
+                        <li>Technique ID: T1041</li>
+                        <li>Commonly used in advanced persistent threat (APT) campaigns</li>
+                        <li>Requires security monitoring and threat detection capabilities</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Detection Strategies -->
+            <section class="content-section">
+                <h2>Detection Strategies</h2>
+                <p>
+                    Monitor for unusual data volumes on C2 channels, abnormal upload patterns, large file transfers to external destinations, and data encoding/compression activities.
+                </p>
+                
+                <div class="warning-box">
+                    <h3>⚠️ Detection Challenges</h3>
+                    <p>
+                        Detecting exfiltration over c2 channel activities requires sophisticated monitoring capabilities 
+                        and correlation of multiple security signals. Organizations should implement layered detection 
+                        approaches combining network monitoring, endpoint detection, and behavioral analytics.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Mitigation Recommendations -->
+            <section class="content-section">
+                <h2>Mitigation Recommendations</h2>
+                <p>
+                    Implement data loss prevention, monitor network traffic for exfiltration indicators, restrict outbound connections, deploy network segmentation, and use anomaly detection systems.
+                </p>
+                
+                <div class="success-box">
+                    <h3>✓ Best Practices</h3>
+                    <ul>
+                        <li>Implement defense-in-depth security architecture</li>
+                        <li>Conduct regular security assessments and penetration testing</li>
+                        <li>Maintain updated threat intelligence and indicators of compromise</li>
+                        <li>Train security teams on the latest attack techniques and detection methods</li>
+                        <li>Deploy endpoint detection and response (EDR) solutions</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Real-World Applications -->
+            <section class="content-section">
+                <h2>Real-World Applications</h2>
+                <p>
+                    Security operations centers (SOCs) leverage knowledge of Exfiltration Over C2 Channel to enhance their 
+                    threat detection capabilities. By understanding this technique, security analysts can:
+                </p>
+                <ul>
+                    <li>Create more effective detection rules and alerts</li>
+                    <li>Improve incident response procedures and playbooks</li>
+                    <li>Develop targeted threat hunting queries</li>
+                    <li>Strengthen security controls and preventive measures</li>
+                </ul>
+            </section>
+
+            <!-- Conclusion -->
+            <section class="content-section">
+                <h2>Conclusion</h2>
+                <p>
+                    Understanding Exfiltration Over C2 Channel is essential for modern cybersecurity operations. Organizations 
+                    must implement comprehensive security monitoring, maintain robust detection capabilities, and 
+                    continuously update their defense strategies to protect against this exfiltration technique.
+                </p>
+                <p>
+                    Stay informed about the latest threat intelligence and security best practices by following 
+                    our blog and subscribing to our newsletter for regular updates on cybersecurity trends and 
+                    MITRE ATT&CK techniques.
+                </p>
+            </section>
+
+            <!-- Navigation -->
+            <div class="article-navigation">
+                <a href="index.html" class="btn-secondary">← Back to Blog</a>
+                <a href="../index.html#contact" class="btn-primary">Get Security Consultation →</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Mahamad Sekh. All rights reserved.</p>
+            <p>
+                <a href="../privacy.html">Privacy Policy</a> | 
+                <a href="../index.html#contact">Contact</a> |
+                <a href="index.html">Blog</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuToggle.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.nav-container')) {
+                mobileMenuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

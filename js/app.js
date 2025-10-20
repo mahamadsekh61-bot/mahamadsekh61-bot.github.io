@@ -1,24 +1,23 @@
-/**
- * PHOENIX PROTOCOL - HACKER MATRIX BACKGROUND ANIMATION
- * Constitutional Authority: Creative Guild + Engineering Guild
- * Purpose: Dynamic particle network visualization for "live, intelligent AI" brand identity
- * Version: 1.0 (October 2025)
+﻿/**
+ * PHOENIX PROTOCOL - INTERACTIVE HACKER MATRIX
+ * Enhanced with CURSOR-FOLLOWING Gaming Effect
+ * Version: 2.0 (October 2025)
  */
 
 particlesJS('particles-js', {
   "particles": {
     "number": {
-      "value": 150,              // Dense but not overcrowded constellation
+      "value": 150,
       "density": {
         "enable": true,
         "value_area": 800
       }
     },
     "color": {
-      "value": "#00d9ff"         // Electric cyan (matches Website 2.0 accent color)
+      "value": "#00d9ff"
     },
     "shape": {
-      "type": "circle",          // Simple circular particles ("stars")
+      "type": "circle",
       "stroke": {
         "width": 0,
         "color": "#000000"
@@ -32,61 +31,70 @@ particlesJS('particles-js', {
       }
     },
     "size": {
-      "value": 2,                // Small, subtle size
+      "value": 2,
       "random": true,
       "anim": {
         "enable": false
       }
     },
     "line_linked": {
-      "enable": true,            // Neural threads enabled
+      "enable": true,
       "distance": 150,
-      "color": "#333333",        // Subtle dark gray (contrasts with glowing stars)
-      "opacity": 0.4,            // Low opacity (non-distracting)
+      "color": "#333333",
+      "opacity": 0.4,
       "width": 1
     },
     "move": {
-      "enable": true,            // Gentle drifting effect
-      "speed": 0.5,              // Very slow speed
+      "enable": true,
+      "speed": 1.5,
       "direction": "none",
       "random": false,
       "straight": false,
       "out_mode": "out",
       "bounce": false,
       "attract": {
-        "enable": false
+        "enable": true,
+        "rotateX": 600,
+        "rotateY": 1200
       }
     }
   },
   "interactivity": {
-    "detect_on": "canvas",       // Interactive laser detection
+    "detect_on": "canvas",
     "events": {
       "onhover": {
         "enable": true,
-        "mode": "grab"           // Cursor connects to nearby particles ("laser" effect)
+        "mode": ["grab", "bubble"]
       },
       "onclick": {
         "enable": true,
-        "mode": "push"           // Stars scatter when user clicks
+        "mode": "repulse"
       },
       "resize": true
     },
     "modes": {
       "grab": {
-        "distance": 140,
+        "distance": 200,
         "line_linked": {
-          "opacity": 1           // Stronger connection on hover
+          "opacity": 1
         }
       },
-      "push": {
-        "particles_nb": 4        // Add particles on click
+      "bubble": {
+        "distance": 250,
+        "size": 4,
+        "duration": 2,
+        "opacity": 0.8
+      },
+      "repulse": {
+        "distance": 100,
+        "duration": 0.4
       }
     }
   },
   "retina_detect": true
 });
 
-console.log('🔥 Hacker Matrix animation initialized');
-console.log('   Particles: 150 (constellation field)');
-console.log('   Neural threads: Enabled (dark gray, 0.4 opacity)');
-console.log('   Interactive laser: Hover grab + Click push');
+console.log('âœ¨ INTERACTIVE MATRIX: Cursor-following enabled');
+console.log('   ðŸ’« Particles attracted to cursor');
+console.log('   ðŸŽ® Gaming effect: Move cursor to control stars');
+console.log('   ðŸŽ¯ Click to scatter particles');

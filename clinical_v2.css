@@ -711,7 +711,7 @@ footer a {
 }
 
 /* Critical Fix: Small Mobile Devices (<480px) */
-@media (max-width: 480px) {
+@media (max-width: 540px) {
   /* Base Container - Prevent Overflow */
   .container {
     padding: 1rem;
@@ -902,7 +902,7 @@ footer a {
    ADDITIONAL MOBILE FIXES - Email Signup & Container Width
    ═══════════════════════════════════════════════════════════ */
 
-@media (max-width: 480px) {
+@media (max-width: 540px) {
   /* Email Signup - Fix 698px overflow */
   .email-signup {
     padding: 1rem !important;

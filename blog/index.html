@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Phoenix Protocol | MITRE ATT&CK Threat Intelligence</title>
+    <meta name="description" content="Expert cybersecurity analysis covering MITRE ATT&CK techniques. Learn about cloud threats, detection methods, and prevention strategies from Constitutional AI perspective.">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../clinical_v2.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
+    
+    <!-- Preload -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <style>
+        .blog-header {
+            text-align: center;
+            padding: 4rem 0 3rem;
+            background: var(--gradient-dark);
+        }
+        
+        .blog-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .blog-header p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            padding: 3rem 0;
+        }
+        
+        .blog-card {
+            background: var(--gradient-card);
+            backdrop-filter: blur(var(--glass-blur));
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            transition: all var(--transition-base);
+            cursor: pointer;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-electric);
+            box-shadow: 0 10px 30px var(--accent-electric-glow);
+        }
+        
+        .blog-tactic {
+            display: inline-block;
+            background: var(--accent-electric);
+            color: var(--primary-dark);
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+        
+        .blog-card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .blog-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: var(--text-tertiary);
+            padding-top: 1rem;
+            border-top: 1px solid var(--glass-border);
+        }
+        
+        .read-more {
+            color: var(--accent-electric);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .read-more:hover {
+            text-decoration: underline;
+        }
+        
+        .tactic-filter {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 2rem 0;
+        }
+        
+        .filter-btn {
+            padding: 0.5rem 1.5rem;
+            background: var(--glass-background);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all var(--transition-base);
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--accent-electric);
+            color: var(--primary-dark);
+            border-color: var(--accent-electric);
+        }
+        
+        @media (max-width: 540px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .blog-header h1 {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hacker Matrix Background -->
+    <div id="particles-js"></div>
+    
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="nav-brand">
+                <a href="../index.html">🔥 Phoenix Protocol</a>
+            </div>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="index.html" class="active">Blog</a>
+                <a href="../index.html#features">Features</a>
+                <a href="mailto:contact@phoenixprotocol.ai">Contact</a>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Blog Header -->
+    <section class="blog-header">
+        <div class="container">
+            <h1>🛡️ Threat Intelligence Blog</h1>
+            <p>Expert analysis of MITRE ATT&CK techniques, cloud security threats, and defense strategies. Powered by Constitutional AI for hallucination-free insights.</p>
+        </div>
+    </section>
+    
+    <!-- Tactic Filters -->
+    <section class="container">
+        <div class="tactic-filter">
+            <button class="filter-btn active" data-tactic="all">All Articles</button>
+            <button class="filter-btn" data-tactic="initial-access">Initial Access</button>
+            <button class="filter-btn" data-tactic="execution">Execution</button>
+            <button class="filter-btn" data-tactic="persistence">Persistence</button>
+            <button class="filter-btn" data-tactic="defense-evasion">Defense Evasion</button>
+        </div>
+    </section>
+    
+    <!-- Blog Grid -->
+    <section class="container">
+        <div class="blog-grid" id="blogGrid">
+            <!-- Articles will be loaded here via JavaScript -->
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Phoenix Protocol. Constitutional AI • No Hallucinations • Always Evolving</p>
+            <div class="footer-links">
+                <a href="../index.html">Home</a>
+                <a href="index.html">Blog</a>
+                <a href="mailto:contact@phoenixprotocol.ai">Contact</a>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="../asre_engine.js"></script>
+    
+    <script>
+        // Initialize particles.js
+        if (typeof particlesJS !== 'undefined') {
+            particlesJS('particles-js', {
+                particles: {
+                    number: { value: 80, density: { enable: true, value_area: 800 } },
+                    color: { value: '#00d9ff' },
+                    shape: { type: 'circle' },
+                    opacity: { value: 0.5, random: false },
+                    size: { value: 3, random: true },
+                    line_linked: { enable: true, distance: 150, color: '#00d9ff', opacity: 0.4, width: 1 },
+                    move: { enable: true, speed: 2, direction: 'none', random: false, straight: false, out_mode: 'out', bounce: false }
+                },
+                interactivity: {
+                    detect_on: 'canvas',
+                    events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' }, resize: true },
+                    modes: { repulse: { distance: 100, duration: 0.4 }, push: { particles_nb: 4 } }
+                },
+                retina_detect: true
+            });
+        }
+        
+        // Blog articles data
+        const articles = [
+            { title: 'Phishing Attacks', tactic: 'initial-access', file: 'initial-access-phishing.md', wordCount: 626, description: 'Deep dive into phishing techniques, detection methods, and prevention strategies.' },
+            { title: 'Exploit Public-Facing Application', tactic: 'initial-access', file: 'initial-access-exploit-public-facing-application.md', wordCount: 654, description: 'Analysis of exploiting vulnerabilities in internet-facing applications.' },
+            { title: 'Valid Accounts (Initial Access)', tactic: 'initial-access', file: 'initial-access-valid-accounts.md', wordCount: 640, description: 'How attackers leverage legitimate credentials for initial access.' },
+            { title: 'Command and Scripting Interpreter', tactic: 'execution', file: 'execution-command-and-scripting-interpreter.md', wordCount: 657, description: 'Malicious use of command-line interfaces and scripting engines.' },
+            { title: 'Scheduled Task/Job', tactic: 'execution', file: 'execution-scheduled-task-or-job.md', wordCount: 657, description: 'Abusing task schedulers for malicious code execution.' },
+            { title: 'User Execution', tactic: 'execution', file: 'execution-user-execution.md', wordCount: 629, description: 'Social engineering tactics that trick users into running malware.' },
+            { title: 'Create or Modify System Process', tactic: 'persistence', file: 'persistence-create-or-modify-system-process.md', wordCount: 671, description: 'Techniques for maintaining access through system process manipulation.' },
+            { title: 'Boot or Logon Autostart Execution', tactic: 'persistence', file: 'persistence-boot-or-logon-autostart-execution.md', wordCount: 671, description: 'Persistence mechanisms that survive system restarts.' },
+            { title: 'Create Account', tactic: 'persistence', file: 'persistence-create-account.md', wordCount: 629, description: 'Establishing backdoor accounts for long-term access.' },
+            { title: 'Valid Accounts (Defense Evasion)', tactic: 'defense-evasion', file: 'defense-evasion-valid-accounts.md', wordCount: 640, description: 'Using legitimate credentials to evade detection systems.' },
+            { title: 'Deobfuscate/Decode Files or Information', tactic: 'defense-evasion', file: 'defense-evasion-deobfuscate-decode-files-or-information.md', wordCount: 682, description: 'Runtime decryption and deobfuscation to hide malicious intent.' },
+            { title: 'Impair Defenses', tactic: 'defense-evasion', file: 'defense-evasion-impair-defenses.md', wordCount: 640, description: 'Techniques to disable or bypass security controls.' },
+            { title: 'Obfuscated Files or Information', tactic: 'defense-evasion', file: 'defense-evasion-obfuscated-files-or-information.md', wordCount: 668, description: 'Obfuscation methods to hide malicious code from analysis.' }
+        ];
+        
+        // Render articles
+        function renderArticles(filter = 'all') {
+            const grid = document.getElementById('blogGrid');
+            const filtered = filter === 'all' ? articles : articles.filter(a => a.tactic === filter);
+            
+            grid.innerHTML = filtered.map(article => `
+                <article class="blog-card" onclick="window.location.href='${article.file.replace('.md', '.html')}'">
+                    <span class="blog-tactic">${article.tactic.replace('-', ' ').toUpperCase()}</span>
+                    <h2>${article.title}</h2>
+                    <p>${article.description}</p>
+                    <div class="blog-meta">
+                        <span>${article.wordCount} words • 3 min read</span>
+                        <a href="${article.file.replace('.md', '.html')}" class="read-more">Read More →</a>
+                    </div>
+                </article>
+            `).join('');
+        }
+        
+        // Filter functionality
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                e.target.classList.add('active');
+                renderArticles(e.target.dataset.tactic);
+            });
+        });
+        
+        // Initial render
+        renderArticles();
+    </script>
+</body>
+</html>

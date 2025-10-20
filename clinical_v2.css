@@ -255,6 +255,49 @@ nav {
     box-shadow: var(--shadow-sm);
 }
 
+/* Mobile Menu Toggle Button (Hamburger) */
+.mobile-menu-toggle {
+    display: none; /* Hidden on desktop */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 2rem;
+    height: 2rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
+}
+
+.mobile-menu-toggle span {
+    width: 2rem;
+    height: 0.25rem;
+    background: var(--accent-electric);
+    border-radius: 10px;
+    transition: all var(--transition-base);
+    position: relative;
+    transform-origin: 1px;
+}
+
+.mobile-menu-toggle:hover span {
+    background: var(--text-primary);
+    box-shadow: 0 0 8px var(--accent-electric-glow);
+}
+
+/* Mobile Menu Active State */
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(20px);
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
 /* Theme Toggle Button */
 .theme-toggle {
     background: var(--glass-background);
@@ -697,6 +740,50 @@ footer a {
 
 /* Mobile First: Tablets and Small Desktops (481px - 768px) */
 @media (max-width: 768px) {
+  /* Show Mobile Menu Toggle */
+  .mobile-menu-toggle {
+    display: flex;
+  }
+  
+  /* Hide Nav Links by Default on Mobile */
+  .nav-links {
+    position: fixed;
+    right: -100%;
+    top: 70px;
+    flex-direction: column;
+    background: var(--glass-background);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    width: 100%;
+    text-align: center;
+    transition: right var(--transition-slow);
+    box-shadow: var(--shadow-lg);
+    border-top: 1px solid var(--glass-border);
+    padding: var(--spacing-lg) 0;
+    gap: 0;
+  }
+  
+  .nav-links.active {
+    right: 0;
+  }
+  
+  .nav-links a {
+    padding: var(--spacing-md) var(--spacing-lg);
+    margin: 0;
+    width: 100%;
+    display: block;
+    border-bottom: 1px solid var(--glass-border);
+  }
+  
+  .nav-links a:last-child {
+    border-bottom: none;
+  }
+  
+  .nav-links a:hover {
+    background: var(--tertiary-dark);
+    border-radius: 0;
+  }
+  
   .container {
     padding: 1.5rem;
   }
